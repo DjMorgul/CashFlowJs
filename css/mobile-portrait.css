@@ -1493,6 +1493,7 @@ body {
 
 #income-table {
     display: block;
+    max-height: 14%;
     width: 95%;
     overflow: auto;
 }

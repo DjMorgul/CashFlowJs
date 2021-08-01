@@ -1543,6 +1543,7 @@ background: radial-gradient(circle, rgba(23,50,0,1) 40%, rgba(38,39,4,1) 97%, rg
 
 #income-table {
     display: block;
+    max-height: 14%;
     width: 95%;
     overflow: auto;
 }
