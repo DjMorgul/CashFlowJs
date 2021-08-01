@@ -167,6 +167,7 @@ var APP = APP || {
                     APP.players[i]['name'] +
                     " </div>"
                 );
+                APP.display.updatePlayerColor('table row', i + 1);
             }
 
             $("#game-menu").show();
