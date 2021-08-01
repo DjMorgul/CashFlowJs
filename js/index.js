@@ -1634,7 +1634,6 @@ APP.finance = {
 
         var shares = Number(sellStockObj.shares);
         var price = Number(sellStockObj.price);
-        var re = price * shares;
         var index;
 
         for (var i = 0; i < arr.length; i++) {
@@ -1643,6 +1642,8 @@ APP.finance = {
             }
         }
 
+        shares = Math.min(shares, arr[index].shares);  // Limited to the number of shares owned
+        var re = price * shares;
         player.cash += re;
         arr[index].shares -= shares;
 
