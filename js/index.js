@@ -286,14 +286,13 @@ var APP = APP || {
 		var manualDice = document.getElementById("manual-dice-input");
 		
 		if (OPTIONS.manualDice.checked == true){
-			//show dice input
 			dice = Math.floor(Math.max(1, Math.min(manualDice.value, dieCount * 6)));
 		} else {
-			
 			dice = this.rollDie(dieCount);
 		}
 		
         // show rolled dice info
+        $("#manual-dice-input").hide();
         $("#roll-info-container").show();
         $("#roll-info").text("Dice: " + String(dice));
 
@@ -395,6 +394,10 @@ var APP = APP || {
                 $("#card-btns").show();
                 $("#roll-btn").show();
                 $("#menu-save-btn").show();				
+                if (OPTIONS.manualDice.checked == true) {
+                    $("#manual-dice-input").val("");
+                    $("#manual-dice-input").show();
+                }
             } else {
                 $("#menu-save-btn").hide();
                 $("#roll-btn").hide();
@@ -419,6 +422,10 @@ var APP = APP || {
             $("#ft-roll-btn").show();
             $("#ft-roll2-btn").hide();
             $("#ft-enter-btn").hide();
+            if (OPTIONS.manualDice.checked == true) {
+                $("#manual-dice-input").val("");
+                $("#manual-dice-input").show();
+            }
 
             // fast track statement
             $("#asset-table").hide();
@@ -971,6 +978,7 @@ var APP = APP || {
                 $("#bankrupt-card").hide();
 				$("#roll-btn").hide();
 				$("#roll2-btn").hide();
+                $("#manual-dice-input").hide();
                 // continue button
 				
 				APP.finance.statement();
@@ -983,6 +991,7 @@ var APP = APP || {
                 $("#br-settlement-text").hide();
 				$("#roll-btn").hide();
 				$("#roll2-btn").hide();
+                $("#manual-dice-input").hide();
 				
 				APP.finance.statement();				
             }
