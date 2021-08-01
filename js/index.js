@@ -113,20 +113,31 @@ var APP = APP || {
                         return Math.floor(Math.random() * (APP.display.playerColors.length));
                     }
 
-                    var randVal = getRandomColor();
+                    var colorAlreadyUsed = true;
+                    while (colorAlreadyUsed) {
+                        var randVal = getRandomColor();
 
 
-                    /*newColorsArr.forEach((ele)=>{
+                        /*newColorsArr.forEach((ele)=>{
+                            playerColor = pc.options[randVal].value;
+
+                            if (ele !== pc.options[randVal].value){
+
+                                newColorsArr.push(playerColor)
+                            } 
+                        })*/
+
                         playerColor = pc.options[randVal].value;
 
-                        if (ele !== pc.options[randVal].value){
-                            
-                            newColorsArr.push(playerColor)
-                        } 
-                    })*/
-                    
-                    playerColor = pc.options[randVal].value;
-                    
+                        // Check if this color was already used by some other player
+                        colorAlreadyUsed = false;
+                        for (var pIdx = 0; pIdx < APP.players.length; pIdx++) {
+                            if (playerColor == APP.players[pIdx].color) {
+                                colorAlreadyUsed = true;
+                                break;
+                            }
+                        }
+                    }
                 } else {
                     playerColor = pc.options[pc.selectedIndex].value;
                 }
