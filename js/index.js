@@ -1427,6 +1427,7 @@ APP.finance = {
                 player.boatPayment = 0;
             }
         } else {
+            loan = Math.min(loan, player.loans);
             player.loans -= loan;
             player.cash -= loan;
         }
