@@ -936,6 +936,7 @@ APP.finance = {
         document.getElementById("player-salary-income").innerHTML = APP.display.numWithCommas(player.jobTitle[1]);
 
         // Expenses
+        this.getIncome(APP.currentPlayerArrPos());
         APP.finance.getTaxes();
         document.getElementById("expenses-taxes").innerHTML = APP.display.numWithCommas(player.jobTitle[3]);
         document.getElementById("expenses-mortgage").innerHTML = APP.display.numWithCommas(player.jobTitle[4]);
@@ -965,7 +966,6 @@ APP.finance = {
             this.getInsurance(APP.currentPlayerArrPos());
         }
         this.getExpenses(APP.currentPlayerArrPos());
-        this.getIncome(APP.currentPlayerArrPos());
         this.getPayday(APP.currentPlayerArrPos());
 
         // Show amount needed to win if player is in the fast track
