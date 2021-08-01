@@ -177,8 +177,13 @@ APP.display = {
     showTokens: function() {
         for (var i = 0; i < APP.players.length; i++) {
             var token = this.tokens[i].ele;
-            var startSpace = document.getElementById("tokenSection0");
-            startSpace.insertAdjacentHTML("beforeend", token);
+            // var startSpace = document.getElementById("tokenSection0");
+            // startSpace.insertAdjacentHTML("beforeend", token);
+            var currentPosition = APP.players[i].position;
+            var newSquare = document.getElementById(
+                "tokenSection" + parseInt(currentPosition, 10)
+            );
+            $(token).appendTo(newSquare);
             
             // Add color to game piece
             APP.display.colorGamePiece((i+1), APP.players[i].color);
