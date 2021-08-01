@@ -1493,9 +1493,9 @@ APP.finance = {
         var player = APP.players[APP.currentPlayerArrPos()];
 
         APP.currentDeal.shares = 0;
-        APP.currentDeal.shares += Number(
+        APP.currentDeal.shares += Math.max(0, Math.floor(Number(
             document.getElementById("share-amt-input").value
-        );
+        )));
 
         const stockObj = JSON.parse(JSON.stringify(APP.currentDeal));
 
@@ -1548,9 +1548,9 @@ APP.finance = {
         var arr = player.stockAssets;
 
         APP.currentDeal.shares = 0;
-        APP.currentDeal.shares += Number(
+        APP.currentDeal.shares += Math.max(0, Math.floor(Number(
             document.getElementById("share-amt-input-sell").value
-        );
+        )));
 
         let sellStockObj = JSON.parse(JSON.stringify(APP.currentDeal));
 
