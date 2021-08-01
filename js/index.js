@@ -287,7 +287,7 @@ var APP = APP || {
 		
 		if (OPTIONS.manualDice.checked == true){
 			//show dice input
-			dice = manualDice.value;
+			dice = Math.floor(Math.max(1, Math.min(manualDice.value, dieCount * 6)));
 		} else {
 			
 			dice = this.rollDie(dieCount);
