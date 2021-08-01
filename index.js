@@ -1318,6 +1318,7 @@ APP.finance = {
         var loan = parseInt(document.getElementById("loan-amt-input").value, 10);
         var player = APP.players[APP.currentPlayerArrPos()];
         loan = isNaN(loan) ? 0 : loan;
+        loan = Math.floor(loan / 1000) * 1000;  // Make sure it's a multiple of 1000
 
         player.loans += loan;
         player.cash += loan;
@@ -1328,6 +1329,7 @@ APP.finance = {
         var loan = parseInt(document.getElementById("loan-amt-input2").value, 10);
         var player = APP.players[APP.currentPlayerArrPos()];
         loan = isNaN(loan) ? 0 : loan;
+        loan = Math.floor(loan / 1000) * 1000;  // Make sure it's a multiple of 1000
 		
 		//if player can afford load
         if (player.loanId == "liability-mortgage") {
