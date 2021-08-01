@@ -1355,6 +1355,8 @@ APP.finance = {
         APP.display.highlightLiabilities(2);
     },
     loanPayment: function(currentPlayer) {
+        if (currentPlayer === undefined)
+            currentPlayer = APP.currentPlayerArrPos();
         var player = APP.players[currentPlayer];
         var loanPayment = player.loans * 0.1;		
         player.loanPayment = loanPayment;
