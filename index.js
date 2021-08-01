@@ -1511,14 +1511,17 @@ APP.finance = {
         if (cost <= player.cash) {
             player.cash -= cost;
 
-            if (index == -1) {
-                arr.push(stockObj);
-            } else {
-                arr[index].shares += shares;
+            if (shares) {
+                if (index == -1) {
+                    arr.push(stockObj);
+                } else {
+                    arr[index].shares += shares;
+                }
             }
+            if (shares || index > -1)
+                $("#show-stock-sell-form-btn").show();
 
             $("#show-stock-form-btn").show();
-            $("#show-stock-sell-form-btn").show();
             $("#buy-shares-form").hide();
             $("#buy-stock-btn").hide();
             $("#done-buy-sell-btn").hide();
