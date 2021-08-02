@@ -975,12 +975,25 @@ var APP = APP || {
 			if (player.realEstateAssets.length < 1) {
 				player.debtSale = false;
 				
-                $("#bankrupt-game-over-card").show();
-                $("#bankrupt-card").hide();
+                // Check if any other player isn't bankrupt
+                var everyoneBankrupt = true;
+                for (var pIdx = 0; pIdx < APP.players.length; pIdx++)
+                    if (!APP.players[pIdx].debt) {
+                        everyoneBankrupt = false;
+                        break;
+                    }
+                if (everyoneBankrupt) {
+                    $("#bankrupt-game-over-card").show();
+                    $("#bankrupt-card").hide();
+                } else {
+                    $("#lose-card").show();
+                    $("#end-turn-btn").show();
+                    $("#finish-turn-container").show();
+                    player.downsizedTurns = Number.MAX_VALUE;  // This player will be skipped from now on
+                }
 				$("#roll-btn").hide();
 				$("#roll2-btn").hide();
                 $("#manual-dice-input").hide();
-                // continue button
 				
 				APP.finance.statement();
             } else if(player.realEstateAssets.length > 0){
