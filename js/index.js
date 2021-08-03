@@ -1335,7 +1335,7 @@ APP.finance = {
                 this.loanOffer(downsizedAmount);
             } else {
                 player.cash -= downsizedAmount;
-                player.downsizedTurns += 3;
+                player.downsizedTurns = 3;
                 APP.finishTurn();
             }
         }
@@ -2263,7 +2263,7 @@ APP.loadCard = function(boardPosition) {
 
                 document.getElementById("downsized-amt2").innerHTML = APP.display.numWithCommas(downsizedAmount);
 
-                playerObj.downsizedTurns += 3;
+                playerObj.downsizedTurns = 3;
             }
         }
     }

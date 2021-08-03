@@ -336,7 +336,7 @@ APP.display = {
             $("#ds-pay-button").show();
             $("#no-loan-btn").hide();
 			
-            player.downsizedTurns += 3;
+            player.downsizedTurns = 3;
             APP.finance.statement();
         } else if (boardPosition === 1 || boardPosition === 9 || boardPosition === 17) {
             APP.display.clearCards();
