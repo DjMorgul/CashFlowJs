@@ -321,6 +321,13 @@ var APP = APP || {
                 ".coin-asset" + parseInt(APP.currentPlayerArrPos(), 10) + "-row";
             $(coinRowClass).hide();
         }
+
+        if (APP.currentPlayer < APP.pCount) {
+            APP.currentPlayer++;
+        } else {
+            APP.currentPlayer = 1;
+        }
+        player = APP.players[APP.currentPlayerArrPos()];
         
         if (player.fastTrack == false) {
             if (APP.dreamPhase.dreamPhaseOn == false) {
@@ -369,13 +376,6 @@ var APP = APP || {
         if (APP.dreamPhase.dreamPhaseOn == true) {
             $("#turn-info-box").hide();
         }
-
-        if (APP.currentPlayer < APP.pCount) {
-            APP.currentPlayer++;
-        } else {
-            APP.currentPlayer = 1;
-        }
-        player = APP.players[APP.currentPlayerArrPos()];
 
         if (player.stockAssets.length >= 0) {
             var stockRowId =
