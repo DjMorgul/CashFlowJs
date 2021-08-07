@@ -110,7 +110,7 @@ var FASTTRACK = {
         //when player lands on square load card
         APP.loadCard(currentPosition);
 
-        if (previousPosition < 10 && currentPosition >= 10) {
+        if ((previousPosition < 10 && currentPosition >= 10) || (previousPosition + dice >= 50)) {
             pObj.cash += pObj.payday;
         }
         if (previousPosition < 18 && currentPosition >= 18) {

@@ -331,7 +331,7 @@ var APP = APP || {
         APP.loadCard(currentPosition);
 
         // If pass paycheck get payday
-        if (previousPosition < 5 && currentPosition >= 5) {
+        if ((previousPosition < 5 && currentPosition >= 5) || (previousPosition + dice >= 29)) {
             pObj.cash += pObj.payday;
         }
         if (previousPosition < 13 && currentPosition >= 13) {
