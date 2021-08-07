@@ -330,12 +330,14 @@ var APP = APP || {
         // When player lands on square load card
         APP.loadCard(currentPosition);
 
-        // If pass paycheck get payday - currently set to salary
+        // If pass paycheck get payday
         if (previousPosition < 5 && currentPosition >= 5) {
             pObj.cash += pObj.payday;
-        } else if (previousPosition < 13 && currentPosition >= 13) {
+        }
+        if (previousPosition < 13 && currentPosition >= 13) {
             pObj.cash += pObj.payday;
-        } else if (previousPosition < 21 && currentPosition + dice >= 21) {
+        }
+        if (previousPosition < 21 && currentPosition + dice >= 21) {
             pObj.cash += pObj.payday;
         }
 

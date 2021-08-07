@@ -112,11 +112,14 @@ var FASTTRACK = {
 
         if (previousPosition < 10 && currentPosition >= 10) {
             pObj.cash += pObj.payday;
-        } else if (previousPosition < 18 && currentPosition >= 18) {
+        }
+        if (previousPosition < 18 && currentPosition >= 18) {
             pObj.cash += pObj.payday;
-        } else if (previousPosition < 30 && currentPosition >= 30) {
+        }
+        if (previousPosition < 30 && currentPosition >= 30) {
             pObj.cash += pObj.payday;
-        } else if (previousPosition < 38 && previousPosition + dice >= 38) {
+        }
+        if (previousPosition < 38 && previousPosition + dice >= 38) {
             pObj.cash += pObj.payday;
         }
 
