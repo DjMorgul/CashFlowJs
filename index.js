@@ -267,7 +267,7 @@ var APP = APP || {
         if (previousPosition < 13 && currentPosition >= 13) {
             pObj.cash += pObj.payday;
         }
-        if (previousPosition < 21 && currentPosition + dice >= 21) {
+        if (previousPosition < 21 && previousPosition + dice >= 21) {
             pObj.cash += pObj.payday;
         }
 
