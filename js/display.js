@@ -221,8 +221,7 @@ APP.display = {
     },
     showFinanceBox: function() {
         var fb = document.getElementById("finance-box");
-        fb.style.display =
-            fb.style.display === "inline-block" ? "inline-block" : "inline-block";
+        fb.style.display = "block";
     },
     hideDreamPhase: function() {
         var ds = document.getElementById("dream-choices");
