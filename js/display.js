@@ -180,9 +180,15 @@ APP.display = {
             // var startSpace = document.getElementById("tokenSection0");
             // startSpace.insertAdjacentHTML("beforeend", token);
             var currentPosition = APP.players[i].position;
-            var newSquare = document.getElementById(
-                "tokenSection" + parseInt(currentPosition, 10)
-            );
+            var newSquare;
+            if (APP.players[i].fastTrack == false)
+                newSquare = document.getElementById(
+                    "tokenSection" + parseInt(currentPosition, 10)
+                );
+            else
+                newSquare = document.getElementById(
+                    "tokenSection2-" + parseInt(currentPosition, 10)
+                );
             $(token).appendTo(newSquare);
             
             // Add color to game piece
