@@ -1140,12 +1140,6 @@ APP.finance = {
             $("#income-table").show();
             $("#liability-table").show();
 
-            if (player.realEstateAssets.length >= 5) {
-                $("#asset-stock-body").css("height", "300px");
-            } else {
-                $("#asset-stock-body").css("height", "16%");
-            }
-
             $("#asset-statement").css("width", "98%");
         }		
     },
