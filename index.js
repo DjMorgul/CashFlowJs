@@ -15,7 +15,7 @@
 var APP = APP || {
     players: [],
     pCount: 1,
-    turnCount: 1,
+    turnCount: 0,
     currentPlayer: 1,
     saveKey: '',
     currentPlayerArrPos: function() {
@@ -375,6 +375,9 @@ var APP = APP || {
 
         if (APP.dreamPhase.dreamPhaseOn == true) {
             $("#turn-info-box").hide();
+        } else {
+            APP.turnCount++;
+            $("#turn-info--").html("Turn: " + APP.turnCount);
         }
 
         if (player.stockAssets.length >= 0) {
@@ -395,10 +398,6 @@ var APP = APP || {
 
         document.getElementById("player-name").innerHTML = APP.players[APP.currentPlayerArrPos()]['name'];
         document.getElementById("ft-player-name").innerHTML = APP.players[APP.currentPlayerArrPos()]['name'];
-        
-        APP.turnCount++;
-
-		$("#turn-info--").html("Turn: " + APP.turnCount);
 
         if (player.charityTurns === 0) {
             $("#roll2-btn").hide();

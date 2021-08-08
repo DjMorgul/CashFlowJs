@@ -1375,7 +1375,7 @@ APP.display = {
 		
 		//reset vars
 		APP.pCount = 1;
-		APP.turnCount = 1;
+		APP.turnCount = 0;
 		APP.currentPlayer = 1;
 	}
 };
