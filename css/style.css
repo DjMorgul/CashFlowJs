@@ -1651,10 +1651,6 @@ background: radial-gradient(circle, rgba(23,50,0,1) 40%, rgba(38,39,4,1) 97%, rg
     width: 128px;
 }
 
-#player-salary-income {
-    float: right;
-}
-
 #expenses-taxes {}
 
 #summary-cash-title {
