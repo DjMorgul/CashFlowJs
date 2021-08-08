@@ -49,6 +49,11 @@ body {
     margin: auto;
 }
 
+tbody {
+    display: table;
+    width: 100%;
+}
+
 #window {
     width: 99.5%;
     display: fixed;
