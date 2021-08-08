@@ -140,7 +140,7 @@ var FASTTRACK = {
        // }
 		
 		
-        if (player.position + dice <= 40) {
+        if (player.position + dice <= 39) {
             player.position += dice;
         } else {
             var pos = player.position + dice;

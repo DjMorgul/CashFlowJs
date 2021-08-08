@@ -280,7 +280,7 @@ var APP = APP || {
             p.position += dice;
         } else {
             var x = p.position + dice;
-            x -= 23;
+            x -= 24;
             p.position = x;
         }
     },
